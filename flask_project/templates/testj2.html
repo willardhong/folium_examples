@@ -1,0 +1,40 @@
+<!-- testj2.html -->
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <script src="//code.jQuery.com/jQuery-1.11.0.min.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+
+  
+</head>
+<body>
+
+  <form method="get">
+    <label for="st">Choose a State:</label>
+      <select id="st" name="st">
+        {% for state in st_list %}
+          <option value={{state.STATEFP}}>{{state.STNAME}}</option>
+        {% endfor %}
+      </select> 
+      <input type="submit" value="Submit" />
+  </form>
+
+  {% include "map.html" %}
+    <h3>Request</h3>
+    <div id='query'>
+        <pre></pre>
+    </div>
+    
+    <h3>Response</h3>
+    <div id='data'>
+        <pre></pre>
+    </div>
+
+  
+
+</body>
+
+<footer>
+  <script src="static/js/script.js"></script> 
+</footer>
+
